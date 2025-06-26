@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Panel{% endblock %}
+{% block content %}
+<h1>Bienvenido {{ user.username }}</h1>
+<p>Seleccione una opción.</p>
+<a class="btn btn-primary" href="{% url 'document_list' %}">Documentos</a>
+<a class="btn btn-secondary" href="{% url 'sacramento_list' %}">Sacramentos</a>
+{% endblock %}
