@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Sacramentos{% endblock %}
+{% block content %}
+<h1>Sacramentos</h1>
+<a href="{% url 'sacramento_create' %}" class="btn btn-primary mb-3">Nuevo</a>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Tipo</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for s in registros %}
+    <tr>
+      <td>{{ s.nombre }}</td>
+      <td>{{ s.apellidos }}</td>
+      <td>{{ s.get_tipo_display }}</td>
+      <td>{{ s.fecha }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="4">No hay registros</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
