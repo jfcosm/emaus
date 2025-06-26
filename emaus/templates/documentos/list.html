@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Documentos{% endblock %}
+{% block content %}
+<h1>Documentos</h1>
+<a href="{% url 'document_create' %}" class="btn btn-primary mb-3">Nuevo Documento</a>
+<ul class="list-group">
+  {% for doc in documentos %}
+  <li class="list-group-item bg-dark text-white">{{ doc.titulo }}</li>
+  {% empty %}
+  <li class="list-group-item bg-dark text-white">No hay documentos</li>
+  {% endfor %}
+</ul>
+{% endblock %}
