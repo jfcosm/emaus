@@ -141,5 +141,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 
-# revisar status de debug por variable de entorno
-# ahora si que si 
