@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de Bautizos{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="mb-4">Registros de Bautizos</h2>
+
+  <a href="{% url 'bautizo_create' %}" class="btn btn-success mb-3">
+    <i class="bi bi-plus-circle"></i> Crear Bautizo
+  </a>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle bg-white">
+      <thead class="table-light">
+        <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>RUT</th>
+          <th>Fecha</th>
+          <th class="text-center">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for b in bautizos %}
+        <tr>
+          <td>{{ b.nombres_bautizado }}</td>
+          <td>{{ b.apellidos_bautizado }}</td>
+          <td>{{ b.rut }}</td>
+          <td>{{ b.fecha }}</td>
+          <td class="text-center">
+            <a href="{% url 'bautizo_detail' b.pk %}" class="btn btn-info btn-sm me-1" title="Ver">
+              <i class="bi bi-eye"></i>
+            </a>
+            <a href="{% url 'bautizo_update' b.pk %}" class="btn btn-warning btn-sm me-1" title="Editar">
+              <i class="bi bi-pencil"></i>
+            </a>
+            <a href="{% url 'bautizo_delete' b.pk %}" class="btn btn-danger btn-sm" title="Eliminar">
+              <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="5" class="text-center">No hay bautizos registrados.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

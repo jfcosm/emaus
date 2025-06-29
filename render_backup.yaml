@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: emaus
+    env: python
+    buildCommand: |
+      echo "INICIANDO BUILD"
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn emaus.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: emaus.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: .onrender.com

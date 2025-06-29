@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Documentos{% endblock %}
+{% block content %}
+<h1>Documentos</h1>
+<a href="{% url 'document_create' %}" class="btn btn-primary mb-3">Nuevo Documento</a>
+<ul class="list-group">
+  {% for doc in documentos %}
+  <li class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
+    {{ doc.titulo }}
+    <span>
+      <a href="{% url 'document_view' doc.pk %}" class="btn btn-outline-light btn-sm me-1">👁️ Ver</a>
+      <a href="{% url 'document_edit' doc.pk %}" class="btn btn-outline-warning btn-sm me-1">✏️ Editar</a>
+      <a href="{% url 'document_delete' doc.pk %}" class="btn btn-outline-danger btn-sm">🗑️ Eliminar</a>
+    </span>
+  </li>
+  {% empty %}
+  <li class="list-group-item bg-dark text-white">No hay documentos</li>
+  {% endfor %}
+</ul>
+{% endblock %}

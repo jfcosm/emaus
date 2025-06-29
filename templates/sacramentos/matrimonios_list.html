@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Listado de Matrimonios{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">💍 Matrimonios</h2>
+    <a href="{% url 'matrimonio_create' %}" class="btn btn-success">+ Registrar Matrimonio</a>
+  </div>
+
+  {% if matrimonios %}
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Novio</th>
+            <th>Novia</th>
+            <th>Fecha</th>
+            <th>Iglesia</th>
+            <th>Celebrante</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for matrimonio in matrimonios %}
+            <tr>
+              <td>{{ matrimonio.nombres_novio }} {{ matrimonio.apellidos_novio }}</td>
+              <td>{{ matrimonio.nombres_novia }} {{ matrimonio.apellidos_novia }}</td>
+              <td>{{ matrimonio.fecha }}</td>
+              <td>{{ matrimonio.iglesia }}</td>
+              <td>{{ matrimonio.celebrante }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p>No se han registrado matrimonios aún.</p>
+  {% endif %}
+</div>
+{% endblock %}

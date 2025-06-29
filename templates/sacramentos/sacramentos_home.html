@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Sacramentos{% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <h2 class="mb-4">📜 Sacramentos</h2>
+  <p class="lead">Selecciona un tipo de sacramento para gestionar sus registros:</p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+
+    <!-- Bautizos -->
+    <div class="col">
+      <a href="{% url 'bautizos_list' %}" class="btn btn-primary w-100 py-4 fs-4 shadow">
+        👶 Bautizos
+      </a>
+    </div>
+
+    <!-- Comunión -->
+    <div class="col">
+      <button class="btn btn-secondary w-100 py-4 fs-4 shadow" disabled>
+        🍞 Primera Comunión
+      </button>
+    </div>
+
+    <!-- Confirmación -->
+    <div class="col">
+      <button class="btn btn-secondary w-100 py-4 fs-4 shadow" disabled>
+        🔥 Confirmación
+      </button>
+    </div>
+
+
+    <!-- Matrimonios -->
+    <div class="col">
+      <a href="{% url 'matrimonios_list' %}" class="btn btn-primary w-100 py-4 fs-4 shadow">
+        💍 Matrimonios
+      </a>
+    </div>
+
+    <!-- Defunciones -->
+    <div class="col">
+      <button class="btn btn-secondary w-100 py-4 fs-4 shadow" disabled>
+        🕊️ Defunciones
+      </button>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

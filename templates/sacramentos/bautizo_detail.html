@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle del Bautizo{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Detalle del Bautizo</h2>
+  <table class="table table-bordered mt-3">
+    <tbody>
+      <tr>
+        <th>Nombres del Bautizado</th>
+        <td>{{ bautizo.nombres_bautizado }}</td>
+      </tr>
+      <tr>
+        <th>Apellidos del Bautizado</th>
+        <td>{{ bautizo.apellidos_bautizado }}</td>
+      </tr>
+      <tr>
+        <th>RUT</th>
+        <td>{{ bautizo.rut }}</td>
+      </tr>
+      <tr>
+        <th>Fecha del Sacramento</th>
+        <td>{{ bautizo.fecha }}</td>
+      </tr>
+      <tr>
+        <th>Iglesia</th>
+        <td>{{ bautizo.iglesia }}</td>
+      </tr>
+      <tr>
+        <th>Celebrante</th>
+        <td>{{ bautizo.celebrante }}</td>
+      </tr>
+      <tr>
+        <th>Nombre del Padre</th>
+        <td>{{ bautizo.nombre_padre }}</td>
+      </tr>
+      <tr>
+        <th>Nombre de la Madre</th>
+        <td>{{ bautizo.nombre_madre }}</td>
+      </tr>
+      <tr>
+        <th>Nombre del Padrino</th>
+        <td>{{ bautizo.nombre_padrino }}</td>
+      </tr>
+      <tr>
+        <th>Nombre de la Madrina</th>
+        <td>{{ bautizo.nombre_madrina }}</td>
+      </tr>
+      <tr>
+        <th>Observaciones</th>
+        <td>{{ bautizo.observaciones|linebreaks }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="{% url 'bautizos_list' %}" class="btn btn-secondary mt-3">Volver a la lista</a>
+</div>
+{% endblock %}

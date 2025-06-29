@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Formulario de Matrimonio{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">{{ form_title|default:"Registrar Matrimonio" }}</h3>
+    </div>
+    <div class="card-body">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="row g-3">
+
+          <!-- Datos del Novio -->
+          <div class="col-md-6">
+            <label for="id_nombres_novio" class="form-label">Nombres del Novio</label>
+            {{ form.nombres_novio }}
+          </div>
+
+          <div class="col-md-6">
+            <label for="id_apellidos_novio" class="form-label">Apellidos del Novio</label>
+            {{ form.apellidos_novio }}
+          </div>
+
+          <!-- Datos de la Novia -->
+          <div class="col-md-6">
+            <label for="id_nombres_novia" class="form-label">Nombres de la Novia</label>
+            {{ form.nombres_novia }}
+          </div>
+
+          <div class="col-md-6">
+            <label for="id_apellidos_novia" class="form-label">Apellidos de la Novia</label>
+            {{ form.apellidos_novia }}
+          </div>
+
+          <!-- Fecha -->
+          <div class="col-md-6">
+            <label for="id_fecha" class="form-label">Fecha del Sacramento</label>
+            {{ form.fecha }}
+          </div>
+
+          <!-- Iglesia y Celebrante -->
+          <div class="col-md-6">
+            <label for="id_iglesia" class="form-label">Iglesia</label>
+            {{ form.iglesia }}
+          </div>
+
+          <div class="col-md-6">
+            <label for="id_celebrante" class="form-label">Celebrante</label>
+            {{ form.celebrante }}
+          </div>
+
+          <!-- Padrinos del Novio -->
+          <div class="col-md-6">
+            <label for="id_nombre_padrino_novio" class="form-label">Padrino del Novio</label>
+            {{ form.nombre_padrino_novio }}
+          </div>
+
+          <div class="col-md-6">
+            <label for="id_nombre_madrina_novio" class="form-label">Madrina del Novio</label>
+            {{ form.nombre_madrina_novio }}
+          </div>
+
+          <!-- Padrinos de la Novia -->
+          <div class="col-md-6">
+            <label for="id_nombre_padrino_novia" class="form-label">Padrino de la Novia</label>
+            {{ form.nombre_padrino_novia }}
+          </div>
+
+          <div class="col-md-6">
+            <label for="id_nombre_madrina_novia" class="form-label">Madrina de la Novia</label>
+            {{ form.nombre_madrina_novia }}
+          </div>
+
+          <!-- Observaciones -->
+          <div class="col-12">
+            <label for="id_observaciones" class="form-label">Observaciones</label>
+            {{ form.observaciones }}
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="mt-4 d-flex justify-content-between">
+          <a href="{% url 'matrimonios_list' %}" class="btn btn-secondary">Cancelar</a>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

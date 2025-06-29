@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Ver Documento{% endblock %}
+{% block content %}
+<h2>{{ doc.titulo }}</h2>
+<div class="bg-light p-3" style="color: #000000;">
+  {{ doc.contenido|safe }}
+</div>
+<a href="{% url 'document_list' %}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}
