@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Bienvenido a Emaús{% endblock %}
+
+{% block content %}
+<!-- Hero principal -->
+<section class="py-5 text-center" style="background: linear-gradient(135deg, #e3f2fd, #ffffff);">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Bienvenido a Emaús</h1>
+        <p class="lead">La plataforma digital que moderniza la gestión parroquial.</p>
+        <p class="mb-0">Olvídate del papeleo, las anotaciones perdidas y los libros difíciles de consultar.</p>
+    </div>
+</section>
+
+<!-- Separador decorativo -->
+<div class="my-5 text-center">
+    <i class="bi bi-stars fs-1 text-secondary"></i>
+</div>
+
+<!-- Comparación tradicional vs Emaús -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">¿Por qué dejar atrás la gestión tradicional?</h2>
+        <div class="row">
+            <div class="col-md-6 border-end">
+                <h4 class="text-danger text-center mb-3">Gestión Tradicional</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">📕 Libros físicos desorganizados</li>
+                    <li class="list-group-item">📄 Papeles que se extravían</li>
+                    <li class="list-group-item">⏳ Búsqueda lenta de información</li>
+                    <li class="list-group-item">💬 Dificultad para generar certificados</li>
+                    <li class="list-group-item">👩‍💼 Trabajo administrativo repetitivo</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4 class="text-success text-center mb-3">Con Emaús</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">🖥️ Información digital y segura</li>
+                    <li class="list-group-item">📚 Registro de sacramentos y misas</li>
+                    <li class="list-group-item">📃 Certificados listos al instante</li>
+                    <li class="list-group-item">📅 Agenda parroquial integrada</li>
+                    <li class="list-group-item">🔍 Búsqueda rápida y precisa</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Separador decorativo -->
+<div class="my-5 text-center">
+    <i class="bi bi-arrow-down-circle fs-1 text-muted"></i>
+</div>
+
+<!-- Funcionalidades destacadas -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">¿Qué puedes hacer con Emaús?</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="p-4 border rounded shadow-sm h-100">
+                    <h4 class="mb-3">📌 Registrar sacramentos</h4>
+                    <p>Desde bautizos hasta matrimonios, mantén todo digitalizado y centralizado.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border rounded shadow-sm h-100">
+                    <h4 class="mb-3">🗓️ Planificar misas</h4>
+                    <p>Agenda tipo calendario para organizar celebraciones con claridad y orden.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border rounded shadow-sm h-100">
+                    <h4 class="mb-3">📄 Generar certificados</h4>
+                    <p>Certificados editables y exportables en PDF con solo unos clics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta text-center py-5 bg-success text-white">
+    <div class="container">
+        <h2 class="fw-bold">¿Listo para dar el salto digital?</h2>
+        <p class="mb-4">Únete a decenas de parroquias que ya usan Emaús y simplifica tu gestión.</p>
+        <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg">Ingresar al sistema</a>
+    </div>
+</section>
+{% endblock %}
