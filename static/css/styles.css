@@ -45,3 +45,25 @@ a {
 .lead {
     font-size: 1.2rem;
 }
+
+
+.card-button {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  border-radius: 12px;
+}
+
+.card-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo específico para Documentos */
+.card-documentos:hover {
+  border-color: #5ba4c6; /* tono más oscuro del gradiente azul */
+}
+
+/* Estilo específico para Sacramentos */
+.card-sacramentos:hover {
+  border-color: #88b993; /* tono más oscuro del gradiente verde */
+}

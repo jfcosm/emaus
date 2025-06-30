@@ -14,33 +14,33 @@
 
   <div class="row g-4">
     <!-- Sección Principal -->
-    <div class="col-md-8">
-      <div class="row g-4">
+    <div class="col-md-8 mx-auto">
+      <div class="d-grid gap-4">
         <!-- Botón Documentos -->
-        <div class="col-md-6">
-          <a href="{% url 'document_list' %}" class="text-decoration-none">
-            <div class="card text-white bg-primary h-100 shadow">
-              <div class="card-body text-center">
-                <h4 class="card-title">📄 Documentos</h4>
-                <p class="card-text">Crea, edita y gestiona certificados parroquiales.</p>
-              </div>
+        <a href="{% url 'document_list' %}" class="text-decoration-none">
+          <div class="card h-100 shadow border-0 card-button card-documentos"
+            style="background: linear-gradient(135deg, #d0e8f2, #89c4e1);">
+            <div class="card-body text-center">
+              <h4 class="card-title fw-bold text-dark">📄 Documentos</h4>
+              <p class="card-text text-dark">Crea, edita y gestiona certificados parroquiales.</p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
 
         <!-- Botón Sacramentos -->
-        <div class="col-md-6">
-          <a href="{% url 'sacramentos_home' %}" class="text-decoration-none">
-            <div class="card text-white bg-success h-100 shadow">
-              <div class="card-body text-center">
-                <h4 class="card-title">✝️ Sacramentos</h4>
-                <p class="card-text">Gestiona registros de bautizos, matrimonios y más.</p>
-              </div>
+        <a href="{% url 'sacramentos_home' %}" class="text-decoration-none">
+          <div class="card h-100 shadow border-0 card-button card-sacramentos"
+            style="background: linear-gradient(135deg, #e2f0cb, #b0dab9);">
+            <div class="card-body text-center">
+              <h4 class="card-title fw-bold text-dark">✝️ Sacramentos</h4>
+              <p class="card-text text-dark">Gestiona registros de bautizos, matrimonios y más.</p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+
       </div>
     </div>
+
 
     <!-- Panel Lateral -->
     <div class="col-md-4">
