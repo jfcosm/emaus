@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Emaús{% endblock %}</title>
     {% load static %}
 
-    <!-- Fuente principal -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Fuente principal moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -16,30 +15,51 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <!-- Ajustes generales -->
+    <!-- Estilos globales -->
     <style>
-        html,
-        body {
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
             font-family: 'Open Sans', sans-serif;
             background-color: #ffffff;
             color: #333333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
         }
 
         .btn {
             font-size: 1.1rem;
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3, h4 {
             font-weight: 700;
+        }
+
+        p.lead {
+            font-size: 1.2rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
         }
 
         .navbar-brand img {
             height: 50px;
-            max-height: 50px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+        }
+
+        .landing-img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 1rem;
         }
     </style>
 
@@ -50,57 +70,44 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg border-bottom shadow-sm" style="background-color: #e0f7fa;">
         <div class="container-fluid">
-            <!-- Logo como enlace al home -->
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'img/logo_emaus.png' %}" alt="Logo EMAÚS" style="height: 50px;">
+                <img src="{% static 'img/logo_emaus.png' %}" alt="Logo EMAÚS">
             </a>
 
             <div class="d-flex align-items-center ms-auto">
-
-                                <a class="btn btn-outline-secondary me-2" href="{% url 'landing' %}">
-                    🏠 Bienvenida
-                </a>
+                <a class="btn btn-outline-secondary me-2" href="{% url 'landing' %}">🏠 Bienvenida</a>
                 {% if user.is_authenticated %}
-
-
-                <a class="btn btn-outline-secondary me-2" href="{% url 'document_list' %}">
-                    📄 Documentos
-                </a>
-                <a class="btn btn-outline-secondary me-2" href="{% url 'sacramentos_home' %}">
-                    📜 Sacramentos
-                </a>
-                <a class="btn btn-outline-primary" href="{% url 'logout' %}">Salir</a>
+                    <a class="btn btn-outline-secondary me-2" href="{% url 'document_list' %}">📄 Documentos</a>
+                    <a class="btn btn-outline-secondary me-2" href="{% url 'sacramentos_home' %}">📜 Sacramentos</a>
+                    <a class="btn btn-outline-primary" href="{% url 'logout' %}">Salir</a>
                 {% else %}
-                <a class="btn btn-outline-primary" href="{% url 'login' %}">Ingresar</a>
+                    <a class="btn btn-outline-primary" href="{% url 'login' %}">Ingresar</a>
                 {% endif %}
             </div>
         </div>
     </nav>
 
-
     <!-- Contenido principal -->
-    <div class="container py-4">
+    <main class="container py-4">
         {% block content %}{% endblock %}
-    </div>
+    </main>
+
+    <!-- Footer global -->
+    <footer class="text-center py-3 border-top">
+        <small class="text-muted">
+            Emaús es un desarrollo de
+            <strong>
+                <a href="https://www.melodialab.pro" target="_blank" class="text-decoration-none">
+                    MelodIA La♭
+                </a>
+            </strong>
+            – © 2025
+        </small>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     {% block extra_js %}{% endblock %}
-
-<!-- Footer global -->
-<footer class="text-center py-3 mt-5 border-top" style="background-color: #f8f9fa;">
-    <small class="text-muted">
-        Emaús es un desarrollo de
-        <strong>
-            <a href="https://www.melodialab.pro" target="_blank" class="text-decoration-none text-muted">
-                MelodIA La♭
-            </a>
-        </strong>
-        – © 2025
-    </small>
-</footer>
-
-
 </body>
-
 </html>
+

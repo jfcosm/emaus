@@ -1,77 +1,47 @@
-/* styles.css */
-
+/* Tipografía y estilo general */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #f8f9fa;
-    color: #212529;
-    padding-top: 60px;
+    color: #333;
+    line-height: 1.6;
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-h1, h2, h3 {
-    color: #004080;
+p {
     margin-bottom: 1rem;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-table th, table td {
-    border: 1px solid #dee2e6;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #e9ecef;
-}
-
-a.btn, button.btn {
-    padding: 8px 16px;
-    font-size: 1rem;
-    border-radius: 5px;
+a {
     text-decoration: none;
-    margin-right: 10px;
 }
 
-.btn-primary {
-    background-color: #004080;
-    color: white;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #003366;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    color: white;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.form-control, .form-select {
-    width: 100%;
-    padding: 10px;
+/* Landing y dashboard imágenes */
+.landing-img {
+    max-width: 300px;
+    height: auto;
     margin-bottom: 1rem;
-    border-radius: 4px;
-    border: 1px solid #ced4da;
 }
 
-label {
-    font-weight: bold;
-    margin-top: 10px;
+/* Estilo de tarjetas */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+}
+
+/* Botones */
+.btn {
+    border-radius: 0.5rem;
+}
+
+/* Ajustes para encabezados */
+.display-4 {
+    font-size: 2.5rem;
+}
+
+.lead {
+    font-size: 1.2rem;
 }

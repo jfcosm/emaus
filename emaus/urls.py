@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from .views import landing_root_view, landing_always_view, home
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,4 +15,6 @@ urlpatterns = [
     path('bienvenida/', landing_always_view, name='landing'),       # Siempre muestra landing
     path('', landing_root_view, name='root_landing'),               # Solo muestra landing si NO estás logueado
     path('inicio/', home, name='home'),                             # Dashboard
+    path('registro/', views.mi_vista_registro, name='registro'),
+
 ]

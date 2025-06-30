@@ -16,3 +16,6 @@ def landing_root_view(request):
 
 def landing_always_view(request):
     return render(request, 'landing.html')  # No redirige nunca
+
+def mi_vista_registro(request):
+    return render(request, 'registro.html')

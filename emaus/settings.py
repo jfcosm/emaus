@@ -24,7 +24,8 @@ import os
 SECRET_KEY = os.getenv('SECRET_KEY', 'clave_por_defecto')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+# DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = True  # Cambia a False en producción
 
 import os
 ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
@@ -125,8 +126,11 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
 
+import os
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 

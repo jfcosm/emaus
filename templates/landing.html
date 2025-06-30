@@ -4,67 +4,40 @@
 {% block title %}Bienvenido a Emaús{% endblock %}
 
 {% block content %}
-<style>
-    .hero, .comparacion, .ventajas, .cta {
-        padding: 4rem 1rem;
-    }
-    .hero {
-        background: linear-gradient(to right, #e0f7fa, #ffffff);
-        text-align: center;
-        border-radius: 1rem;
-        margin-bottom: 3rem;
-    }
-    .hero img {
-        max-width: 100%;
-        height: auto;
-        margin: 2rem 0;
-        border-radius: 1rem;
-    }
-    .comparacion {
-        background-color: #f9f9f9;
-        border-radius: 1rem;
-        margin-bottom: 3rem;
-    }
-    .comparacion img {
-        width: 100%;
-        border-radius: 1rem;
-        margin-bottom: 1rem;
-    }
-    .ventajas {
-        background: linear-gradient(to right, #ffffff, #f1f8e9);
-        border-radius: 1rem;
-        margin-bottom: 3rem;
-    }
-    .ventajas img {
-        width: 100%;
-        border-radius: 1rem;
-        margin-bottom: 1rem;
-    }
-    .cta {
-        background-color: #c8e6c9;
-        text-align: center;
-        border-radius: 1rem;
-    }
-    .cta img {
-        width: 100%;
-        border-radius: 1rem;
-        margin-top: 2rem;
-    }
-</style>
 
-<!-- Hero principal -->
-<section class="hero container">
-    <h1 class="display-4">Bienvenido a Emaús</h1>
-    <p class="lead">La plataforma digital que moderniza la gestión parroquial.</p>
-    <p>Olvídate del papeleo, las anotaciones perdidas y los libros difíciles de consultar.</p>
-    <img src="{% static 'img/landing/hero_section.png' %}" alt="Ilustración bienvenida">
+<!-- Hero Section -->
+<section class="text-center py-5 bg-light">
+    <img src="{% static 'img/landing/hero_section.png' %}" alt="Emaús Hero" class="img-fluid landing-img">
+    <h1 class="display-4 fw-bold">Bienvenido a <span class="text-primary">Emaús</span></h1>
+    <p class="lead">La plataforma moderna para gestionar tu parroquia con eficiencia y claridad.</p>
 </section>
 
-<!-- Comparación tradicional vs Emaús -->
-<section class="comparacion container">
+<!-- Beneficios -->
+<section class="container py-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="{% static 'img/landing/features_sacraments.png' %}" alt="Sacramentos" class="img-fluid landing-img">
+            <h3>Sacramentos</h3>
+            <p>Registra y administra bautizos, matrimonios y más con facilidad.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'img/landing/features_certificates.png' %}" alt="Certificados" class="img-fluid landing-img">
+            <h3>Certificados</h3>
+            <p>Genera certificados digitales en segundos.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'img/landing/features_calendar.png' %}" alt="Calendario" class="img-fluid landing-img">
+            <h3>Agenda Parroquial</h3>
+            <p>Organiza misas, eventos y reuniones en un solo lugar.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Comparación -->
+<section class="container py-5">
     <div class="row">
         <div class="col-md-6 text-center">
-            <img src="{% static 'img/landing/comparison_traditional.png' %}" alt="Gestión tradicional">
+            <img src="{% static 'img/landing/comparison_traditional.png' %}" alt="Gestión tradicional" class="img-fluid landing-img">
             <h4 class="text-danger">Gestión Tradicional</h4>
             <ul class="list-unstyled">
                 <li>📕 Libros físicos desorganizados</li>
@@ -75,46 +48,25 @@
             </ul>
         </div>
         <div class="col-md-6 text-center">
-            <img src="{% static 'img/landing/comparison_emaus.png' %}" alt="Gestión con Emaús">
-            <h4 class="text-success">Con Emaús</h4>
+            <img src="{% static 'img/landing/comparison_emaus.png' %}" alt="Gestión con Emaús" class="img-fluid landing-img">
+            <h4 class="text-success">Gestión con Emaús</h4>
             <ul class="list-unstyled">
-                <li>🖥️ Información digital y segura</li>
-                <li>📚 Registro de sacramentos y misas</li>
-                <li>📃 Generación de certificados al instante</li>
-                <li>📅 Agenda parroquial integrada</li>
-                <li>🔍 Búsqueda rápida por nombres y fechas</li>
+                <li>📘 Toda la información digitalizada</li>
+                <li>🔍 Búsqueda rápida y eficiente</li>
+                <li>📤 Certificados generados al instante</li>
+                <li>📊 Reportes claros y útiles</li>
+                <li>🧘 Trabajo parroquial simplificado</li>
             </ul>
         </div>
     </div>
 </section>
 
-<!-- Funcionalidades destacadas -->
-<section class="ventajas container">
-    <h2 class="text-center mb-5">¿Qué puedes hacer con Emaús?</h2>
-    <div class="row text-center">
-        <div class="col-md-4">
-            <img src="{% static 'img/landing/features_sacraments.png' %}" alt="Registrar sacramentos">
-            <h5>📌 Registrar sacramentos</h5>
-            <p>Bautizos, matrimonios, confirmaciones y más. Todo centralizado.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="{% static 'img/landing/features_calendar.png' %}" alt="Planificar misas">
-            <h5>🗓️ Planificar misas</h5>
-            <p>Gestiona la agenda parroquial con una interfaz tipo calendario.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="{% static 'img/landing/features_certificates.png' %}" alt="Generar certificados">
-            <h5>📄 Generar certificados</h5>
-            <p>Obtén documentos listos para entregar a los feligreses.</p>
-        </div>
-    </div>
+<!-- Call to Action -->
+<section class="text-center py-5 bg-light">
+    <img src="{% static 'img/landing/call_to_action.png' %}" alt="Call to Action" class="img-fluid landing-img">
+    <h2 class="fw-bold">¿Estás listo para modernizar tu parroquia?</h2>
+    <p class="lead">Empieza hoy con Emaús y simplifica tu labor pastoral.</p>
+    <a href="#" class="btn btn-primary btn-lg mt-3">Regístrate gratis</a>
 </section>
 
-<!-- CTA -->
-<section class="cta container">
-    <h2>¿Listo para dar el salto digital?</h2>
-    <p class="lead">Únete a decenas de parroquias que ya usan Emaús.</p>
-    <a href="{% url 'login' %}" class="btn btn-lg btn-dark mt-3">Ingresar al sistema</a>
-    <img src="{% static 'img/landing/call_to_action.png' %}" alt="Únete al cambio">
-</section>
 {% endblock %}
