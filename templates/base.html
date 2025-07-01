@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+
     <meta charset="UTF-8">
     <title>{% block title %}Emaús{% endblock %}</title>
-    {% load static %}
+   
 
     <!-- Fuente principal moderna -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
