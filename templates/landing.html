@@ -4,6 +4,31 @@
 {% block title %}Bienvenido a Emaús{% endblock %}
 
 {% block content %}
+<style>
+    .btn-card {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #f8f9fa;
+        text-decoration: none;
+    }
+
+    .btn-card img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+</style>
 
 <!-- Hero Section -->
 <section class="text-center py-5 bg-light">
@@ -12,23 +37,29 @@
     <p class="lead">La plataforma moderna para gestionar tu parroquia con eficiencia y claridad.</p>
 </section>
 
-<!-- Beneficios -->
+<!-- Beneficios como botones -->
 <section class="container py-5">
-    <div class="row text-center">
+    <div class="row text-center g-4">
         <div class="col-md-4">
-            <img src="{% static 'img/landing/features_sacraments.png' %}" alt="Sacramentos" class="img-fluid landing-img">
-            <h3>Sacramentos</h3>
-            <p>Registra y administra bautizos, matrimonios y más con facilidad.</p>
+            <a href="{% url 'sacramentos_redirect' %}" class="btn-card">
+                <img src="{% static 'img/landing/features_sacraments.png' %}" alt="Sacramentos">
+                <h3>Sacramentos</h3>
+                <p>Registra y administra bautizos, matrimonios y más con facilidad.</p>
+            </a>
         </div>
         <div class="col-md-4">
-            <img src="{% static 'img/landing/features_certificates.png' %}" alt="Certificados" class="img-fluid landing-img">
-            <h3>Certificados</h3>
-            <p>Genera certificados digitales en segundos.</p>
+            <a href="{% url 'documentos_redirect' %}" class="btn-card">
+                <img src="{% static 'img/landing/features_certificates.png' %}" alt="Certificados">
+                <h3>Certificados</h3>
+                <p>Genera certificados digitales en segundos.</p>
+            </a>
         </div>
         <div class="col-md-4">
-            <img src="{% static 'img/landing/features_calendar.png' %}" alt="Calendario" class="img-fluid landing-img">
-            <h3>Agenda Parroquial</h3>
-            <p>Organiza misas, eventos y reuniones en un solo lugar.</p>
+            <a href="{% url 'agenda_redirect' %}" class="btn-card">
+                <img src="{% static 'img/landing/features_calendar.png' %}" alt="Agenda Parroquial">
+                <h3>Agenda Parroquial</h3>
+                <p>Organiza misas, eventos y reuniones en un solo lugar.</p>
+            </a>
         </div>
     </div>
 </section>
@@ -66,7 +97,6 @@
     <img src="{% static 'img/landing/call_to_action.png' %}" alt="Call to Action" class="img-fluid landing-img">
     <h2 class="fw-bold">¿Estás listo para modernizar tu parroquia?</h2>
     <p class="lead">Empieza hoy con Emaús y simplifica tu labor pastoral.</p>
-    <a href="#" class="btn btn-primary btn-lg mt-3">Regístrate gratis</a>
+    <a href="{% url 'registro' %}" class="btn btn-primary btn-lg mt-3">Regístrate gratis</a>
 </section>
-
 {% endblock %}

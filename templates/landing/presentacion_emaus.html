@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Conoce EMAÚS{% endblock %}
+
+{% block content %}
+<section class="text-center py-5">
+    <h1 class="display-5 fw-bold text-primary">¿Por qué elegir EMAÚS?</h1>
+    <p class="lead mb-4">Descubre cómo EMAÚS puede modernizar y facilitar la gestión de tu parroquia.</p>
+
+    <div class="container py-4">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="{% static 'img/landing/features_sacraments.png' %}" class="img-fluid mb-3" alt="Sacramentos">
+                <h4>Sacramentos</h4>
+                <p>Gestiona bautizos, matrimonios y otros sacramentos de forma digital, segura y ordenada.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/landing/features_certificates.png' %}" class="img-fluid mb-3" alt="Documentos">
+                <h4>Documentos</h4>
+                <p>Genera certificados y constancias al instante, con validez formal y respaldo digital.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/landing/features_calendar.png' %}" class="img-fluid mb-3" alt="Agenda">
+                <h4>Agenda Parroquial</h4>
+                <p>Organiza misas, reuniones y actividades con una agenda tipo calendario fácil de usar.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <a href="{% url 'registro' %}" class="btn btn-success btn-lg">Regístrate ahora</a>
+        <p class="mt-2">¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a></p>
+    </div>
+</section>
+{% endblock %}

@@ -19,3 +19,32 @@ def landing_always_view(request):
 
 def mi_vista_registro(request):
     return render(request, 'registro.html')
+
+
+from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
+
+def sacramentos_redirect(request):
+    if request.user.is_authenticated:
+        return redirect('sacramentos_home')  # ← nombre correcto
+    else:
+        return redirect('presentacion_emaus')
+
+
+def documentos_redirect(request):
+    if request.user.is_authenticated:
+        return redirect('document_list')  # ✅ nombre correcto
+    else:
+        return redirect('presentacion_emaus')
+
+def agenda_redirect(request):
+    if request.user.is_authenticated:
+        return redirect('agenda_home')
+    else:
+        return redirect('presentacion_emaus')
+
+
+
+def presentacion_emaus(request):
+    return render(request, 'landing/presentacion_emaus.html')
+

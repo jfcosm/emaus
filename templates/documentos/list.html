@@ -1,20 +1,46 @@
 {% extends 'base.html' %}
-{% block title %}Documentos{% endblock %}
+
+{% block title %}Listado de Documentos{% endblock %}
+
 {% block content %}
-<h1>Documentos</h1>
-<a href="{% url 'document_create' %}" class="btn btn-primary mb-3">Nuevo Documento</a>
-<ul class="list-group">
-  {% for doc in documentos %}
-  <li class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
-    {{ doc.titulo }}
-    <span>
-      <a href="{% url 'document_view' doc.pk %}" class="btn btn-outline-light btn-sm me-1">👁️ Ver</a>
-      <a href="{% url 'document_edit' doc.pk %}" class="btn btn-outline-warning btn-sm me-1">✏️ Editar</a>
-      <a href="{% url 'document_delete' doc.pk %}" class="btn btn-outline-danger btn-sm">🗑️ Eliminar</a>
-    </span>
-  </li>
-  {% empty %}
-  <li class="list-group-item bg-dark text-white">No hay documentos</li>
-  {% endfor %}
-</ul>
+<div class="container">
+  <h2 class="mb-4">Documentos</h2>
+
+  <a href="{% url 'document_create' %}" class="btn btn-success mb-3">
+    <i class="bi bi-plus-circle"></i> Nuevo Documento
+  </a>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle bg-white">
+      <thead class="table-light">
+        <tr>
+          <th>Título</th>
+          <th class="text-center">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for doc in documentos %}
+        <tr>
+          <td>{{ doc.titulo }}</td>
+          <td class="text-center">
+            <a href="{% url 'document_view' doc.pk %}" class="btn btn-info btn-sm me-1" title="Ver">
+              <i class="bi bi-eye"></i>
+            </a>
+            <a href="{% url 'document_edit' doc.pk %}" class="btn btn-warning btn-sm me-1" title="Editar">
+              <i class="bi bi-pencil"></i>
+            </a>
+            <a href="{% url 'document_delete' doc.pk %}" class="btn btn-danger btn-sm" title="Eliminar">
+              <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="2" class="text-center">No hay documentos disponibles.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 {% endblock %}

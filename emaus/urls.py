@@ -16,5 +16,10 @@ urlpatterns = [
     path('', landing_root_view, name='root_landing'),               # Solo muestra landing si NO estás logueado
     path('inicio/', home, name='home'),                             # Dashboard
     path('registro/', views.mi_vista_registro, name='registro'),
+    path('redirigir/sacramentos/', views.sacramentos_redirect, name='sacramentos_redirect'),
+    path('redirigir/documentos/', views.documentos_redirect, name='documentos_redirect'),
+    path('redirigir/agenda/', views.agenda_redirect, name='agenda_redirect'),
+    path('presentacion/', views.presentacion_emaus, name='presentacion_emaus'),
+    path('agenda/', include('agenda.urls')),
 
 ]

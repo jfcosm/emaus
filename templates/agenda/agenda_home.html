@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Agenda Parroquial{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4">Agenda Parroquial</h2>
+    <a href="{% url 'evento_nuevo' %}" class="btn btn-success mb-3">Registrar nuevo evento</a>
+
+    <div id="calendar"></div>
+</div>
+
+<!-- FullCalendar JS y CSS -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+
+
+<!-- <pre id="debug-json">{{ eventos_json }}</pre> -->
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const calendarEl = document.getElementById('calendar');
+
+    const eventos = JSON.parse("{{ eventos_json|escapejs }}");
+    console.log(eventos);
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'es',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,listWeek'
+        },
+        events: eventos
+    });
+
+    calendar.render();
+});
+</script>
+
+
+
+{% endblock %}
