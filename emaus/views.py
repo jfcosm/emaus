@@ -17,8 +17,6 @@ def landing_root_view(request):
 def landing_always_view(request):
     return render(request, 'landing.html')  # No redirige nunca
 
-def mi_vista_registro(request):
-    return render(request, 'registro.html')
 
 
 from django.shortcuts import redirect, render
@@ -47,4 +45,18 @@ def agenda_redirect(request):
 
 def presentacion_emaus(request):
     return render(request, 'landing/presentacion_emaus.html')
+
+from django.shortcuts import render
+
+def registro_provisional(request):
+    return render(request, 'landing/registro_provisional.html')
+
+
+from django.contrib.auth.views import LoginView
+from .forms import CustomLoginForm
+
+class CustomLoginView(LoginView):
+    template_name = 'registration/login.html'
+    authentication_form = CustomLoginForm
+
 
