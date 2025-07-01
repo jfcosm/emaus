@@ -24,8 +24,8 @@ import os
 SECRET_KEY = os.getenv('SECRET_KEY', 'clave_por_defecto')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.getenv('DEBUG', 'False') == 'True'
-DEBUG = True   # Cambia a False en producción
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+# DEBUG = True   # Cambia a False en producción
 
 import os
 ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
